@@ -22,7 +22,7 @@ public class ProducerSentence {
     System.out.println("Thank you for providing the topic " + topicName + "\n");
     System.out.println("Enter message (type exit to quit).\n");
 
-    // Configuring  the Producer
+    // Configure the Producer
     Properties configProperties = new Properties();
     configProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
     configProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
@@ -33,8 +33,8 @@ public class ProducerSentence {
     System.out.println("\nWill use this configuration to create a producer.\n");
 
     org.apache.kafka.clients.producer.Producer producer = new KafkaProducer(configProperties);
-    
-    // creation of custom messages
+
+    // Make our own messages - create your custom logic here
 
     for (int i = 1; i <= 10; i++) {
       String message = createSentence();
@@ -57,6 +57,6 @@ public class ProducerSentence {
   }
 
   private static String createSentence() {
-    return "accountType  contains actionType amount.";
+    return "accountType  contains amount actionType.";
   }
 }
