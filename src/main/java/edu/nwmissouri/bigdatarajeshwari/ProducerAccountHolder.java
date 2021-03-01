@@ -34,7 +34,7 @@ public class ProducerAccountHolder {
 
     org.apache.kafka.clients.producer.Producer producer = new KafkaProducer(configProperties);
 
-    // Make our own messages - create your custom logic here
+    // adding customized messages
 
     for (int i = 1; i <= 10; i++) {
       String message = createSentence();
@@ -42,7 +42,7 @@ public class ProducerAccountHolder {
       producer.send(rec);
     }
 
-    // still allow input from keyboard
+    // Checks for next line whether it has an exit or not 
 
     String line = in.nextLine();
     while (!line.equals("exit")) {
@@ -58,9 +58,9 @@ public class ProducerAccountHolder {
 
   private static String createSentence() {
     String[] accountType = { "Saving's Account", "Current Account", "Temporary Account", "Joint Account", "Permanent Account" };
-    String[] contains = { "has", "is", "will be", "need to be", "going to be" };
+    String[] contains = { "has", "is", "will", "need to", "going to" };
+    String[] actionType = { "credit", "debit", "withdrawal", "deposit", "refund" };
     String[] amount = { "$20,000", " $10,000", "5000 bugs", "$8000", "$15000" };
-    String[] actionType = { "credited", "debited", "withdrawed", "deposited", "refund" };
 
     Random r = new Random();
 
@@ -70,6 +70,6 @@ public class ProducerAccountHolder {
 
     int[] randoms = r.ints(count, minIndex, maxIndex).toArray();
 
-    return accountType[randoms[0]] + " holder " + contains[randoms[1]] + " " + amount[randoms[2]] + " " + actionType[randoms[1]]+ ".";
+    return accountType[randoms[0]] + " holder " + contains[randoms[1]] + " " + actionType[randoms[2]] + " " + amount[randoms[1]]+ ".";
   }
 }
