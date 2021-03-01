@@ -57,6 +57,6 @@ public class ProducerSentence {
   }
 
   private static String createSentence() {
-    return "accountType  contains actionType amount.";
+    return "accountType  contains amount actionType.";
   }
 }
