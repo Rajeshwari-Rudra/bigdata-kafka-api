@@ -34,7 +34,7 @@ public class ProducerAccountHolder {
 
     org.apache.kafka.clients.producer.Producer producer = new KafkaProducer(configProperties);
 
-    // adding customized messages
+    // Make our own messages - create your custom logic here
 
     for (int i = 1; i <= 10; i++) {
       String message = createSentence();
@@ -42,7 +42,7 @@ public class ProducerAccountHolder {
       producer.send(rec);
     }
 
-    // Checks for next line whether it has an exit or not 
+    // still allow input from keyboard
 
     String line = in.nextLine();
     while (!line.equals("exit")) {
