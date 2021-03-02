@@ -37,7 +37,8 @@ Example Kafka Producer and Consumer apps.
 - Leave this window open or minimize it.
 
 ## Command to create a topic
-
+- Choose your own topic name.
+- Here, I have choosen 'account' as my topic name
 
 ```PowerShell
  .\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --create --topic account
@@ -53,7 +54,7 @@ mvn clean compile assembly:single
 
 ## To start a Consumer
 
-Open PowerShell as Administrator in the root project folder, start the original consumer app using topic test and group1 with:
+Open PowerShell as Administrator in the root project folder, start the original consumer app using topic account and group1 with:
 
 ```PowerShell
  java -cp target/bigdata-kafka-api-1.0-SNAPSHOT-jar-with-dependencies.jar edu.nwmissouri.bigdatarajeshwari.Consumer account group1
@@ -63,7 +64,7 @@ Open PowerShell as Administrator in the root project folder, start the original 
 
 ## To Start a Producer
 
-Open a new PowerShell as Administrator in the root project folder, start the Producer app using topic test:
+Open a new PowerShell as Administrator in the root project folder, start the Producer app using topic account:
 
 ```PowerShell
  java -cp target/bigdata-kafka-api-1.0-SNAPSHOT-jar-with-dependencies.jar edu.nwmissouri.bigdatarajeshwari.ProducerSentence account
