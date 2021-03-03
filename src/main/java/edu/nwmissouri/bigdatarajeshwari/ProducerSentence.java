@@ -24,7 +24,7 @@ public class ProducerSentence {
 
     // Configure the Producer
     Properties configProperties = new Properties();
-    configProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+    configProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "198.209.246.199");
     configProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
         "org.apache.kafka.common.serialization.ByteArraySerializer");
     configProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
